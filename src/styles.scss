@@ -2,11 +2,11 @@
 
 :root {
   --primary-color: #dc3545;
-  //--dark-color: #333333;
   --light-color: #f4f4f4;
   --main-color: #4682b4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --dark-color: #333333;
 }
 
 * {
@@ -162,7 +162,6 @@ img {
 .alert-primary {
   background: var(--primary-color);
   color: #fff;
-  border-radius: .25rem;
 }
 
 .btn-light,
@@ -180,7 +179,6 @@ img {
 .alert-dark {
   background: var(--main-color);
   color: #fff;
-  border-radius: .25rem;
 }
 
 .btn-danger,
@@ -276,6 +274,10 @@ table th {
   background: var(--light-color);
 }
 
+.border-radius {
+  border-radius: .25rem;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -285,7 +287,7 @@ table th {
   width: 100%;
   opacity: 0.9;
   margin-bottom: 1rem;
-  background-color: steelblue;
+  //background-color: steelblue;
 
   &.main {
     justify-content: center;
