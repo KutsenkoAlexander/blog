@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {User} from '../../shared/interface';
+import {User} from '../../shared/interfaces';
 import {AuthService} from '../shared/services/auth.service';
 import {Router} from '@angular/router';
 
@@ -18,7 +18,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit() {
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(6)])
+      password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
     });
   }
 
@@ -26,9 +26,11 @@ export class LoginPageComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
+
     const user: User = {
       email: this.form.value.email,
-      password: this.form.value.password
+      password: this.form.value.password,
+      returnSecureToken: true
     };
 
     this.auth.login(user).subscribe(() => {
