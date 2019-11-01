@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {User} from '../../shared/interfaces';
 import {AuthService} from '../shared/services/auth.service';
@@ -26,7 +26,9 @@ export class LoginPageComponent implements OnInit {
     });
     this.activateRoute.queryParams.subscribe((params: Params) => {
       if (params['logined']) {
-        this.message = 'Please, enter login and password';
+        this.message = 'Please, enter login and password.';
+      } else if (params['authFail']) {
+        this.message = 'Session was expired. Login again.';
       }
     });
   }
@@ -49,7 +51,5 @@ export class LoginPageComponent implements OnInit {
     }, error => {
       this.submitted = false;
     });
-
-    console.log(user);
   }
 }
