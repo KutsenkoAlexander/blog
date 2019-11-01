@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 :root {
-  --primary-color: #dc3545;
+  --primary-color: #e88d0e;
   --light-color: #e2e2e2;
   --main-color: #4682b4;
   --danger-color: #dc3545;
@@ -173,10 +173,10 @@ img {
   border-radius: .25rem;
 }
 
-.btn-dark,
-.bg-dark,
-.badge-dark,
-.alert-dark {
+.btn-main,
+.bg-main,
+.badge-main,
+.alert-main {
   background: var(--main-color);
   color: #fff;
 }
@@ -189,6 +189,8 @@ img {
   color: #fff;
   border-radius: .25rem;
 }
+
+
 
 .btn-success,
 .bg-success,
@@ -228,14 +230,14 @@ img {
   margin-bottom: .8rem;
 
   &.invalid {
-    color: var(--primary-color);
+    color: var(--danger-color);
     input {
-      border-color: var(--primary-color);
+      border-color: var(--danger-color);
     }
   }
 
   .validation {
-    color: var(--primary-color);
+    color: var(--danger-color);
   }
 }
 
@@ -298,11 +300,11 @@ table th {
   }
 
   li.active a {
-    color: var(--dark-color);
-    font-weight: bold;
+    color: var(--light-color);
     cursor: default;
-    border-bottom: .35rem solid var(--dark-color);
-    padding: 1.3rem .45rem;
+    border-bottom: .35rem solid var(--light-color);
+    padding: 1.5rem 0.45rem 1rem 0.45rem;
+    background-color: rgb(255, 255, 255, .1 );
   }
 
   a {
@@ -317,6 +319,7 @@ table th {
 
   h1 {
     color: white;
+    font-size: 1.5rem;
     //text-shadow: 1px 2px 2px rgba(0,0,0,.5);
   }
 }

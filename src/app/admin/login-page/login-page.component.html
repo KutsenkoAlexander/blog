@@ -4,6 +4,9 @@
   <div class="alert alert-danger" *ngIf="auth.error$ | async as message">
     {{message}}
   </div>
+  <div class="alert alert-primary" *ngIf="message">
+    {{message}}
+  </div>
 
   <div class="form-control" [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}">
     <label for="email">Email:</label>
@@ -25,5 +28,5 @@
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary" [disabled]="form.invalid || submitted">Enter</button>
+  <button type="submit" class="btn btn-main" [disabled]="form.invalid || submitted">Enter</button>
 </form>
