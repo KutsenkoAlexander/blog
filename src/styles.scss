@@ -192,8 +192,6 @@ img {
   border-radius: .25rem;
 }
 
-
-
 .btn-success,
 .bg-success,
 .badge-success,
@@ -274,7 +272,12 @@ table td {
   text-align: left;
 }
 
-table th {
+table thead tr th {
+  background: var(--dark-color);
+  color: var(--light-color);
+}
+
+table tbody tr th {
   background: var(--light-color);
 }
 
