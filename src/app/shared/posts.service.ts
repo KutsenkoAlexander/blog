@@ -29,7 +29,7 @@ export class PostsService {
           ...response[key],
           id: key,
           date: new Date(response[key].date)
-        }));
+        })).reverse();
       }));
   }
 
