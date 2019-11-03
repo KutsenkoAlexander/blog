@@ -1,18 +1,19 @@
-<div class="post">
-  <div class="header">
-    <h1>Post Title</h1>
-    <button routerLink="/" class="btn btn-link">Home page</button>
-  </div>
-  <div class="info">
-    <strong>Author</strong>
-    <small>28.10.2019</small>
-  </div>
-  <div class="text">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur dolor est itaque numquam odio perferendis qui quis rem saepe soluta, tempore ullam velit. Inventore molestiae quae quibusdam? Culpa eaque eum exercitationem facere fuga hic laborum minima molestias necessitatibus non odio, pariatur quasi sapiente sit suscipit! Deleniti natus nemo pariatur?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur dolor est itaque numquam odio perferendis qui quis rem saepe soluta, tempore ullam velit. Inventore molestiae quae quibusdam? Culpa eaque eum exercitationem facere fuga hic laborum minima molestias necessitatibus non odio, pariatur quasi sapiente sit suscipit! Deleniti natus nemo pariatur?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur dolor est itaque numquam odio perferendis qui quis rem saepe soluta, tempore ullam velit. Inventore molestiae quae quibusdam? Culpa eaque eum exercitationem facere fuga hic laborum minima molestias necessitatibus non odio, pariatur quasi sapiente sit suscipit! Deleniti natus nemo pariatur?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur dolor est itaque numquam odio perferendis qui quis rem saepe soluta, tempore ullam velit. Inventore molestiae quae quibusdam? Culpa eaque eum exercitationem facere fuga hic laborum minima molestias necessitatibus non odio, pariatur quasi sapiente sit suscipit! Deleniti natus nemo pariatur?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur dolor est itaque numquam odio perferendis qui quis rem saepe soluta, tempore ullam velit. Inventore molestiae quae quibusdam? Culpa eaque eum exercitationem facere fuga hic laborum minima molestias necessitatibus non odio, pariatur quasi sapiente sit suscipit! Deleniti natus nemo pariatur?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur dolor est itaque numquam odio perferendis qui quis rem saepe soluta, tempore ullam velit. Inventore molestiae quae quibusdam? Culpa eaque eum exercitationem facere fuga hic laborum minima molestias necessitatibus non odio, pariatur quasi sapiente sit suscipit! Deleniti natus nemo pariatur?</p>
+<div *ngIf="post$ | async as post; else loading">
+  <div class="post">
+    <div class="header">
+      <h1>{{post.title}}</h1>
+      <button routerLink="/" class="btn btn-link">Home page</button>
+    </div>
+    <div class="info">
+      <strong>{{post.author}}</strong>
+      <small>{{post.date | date:'medium':null:'en'}}</small>
+    </div>
+    <div class="text">
+      <quill-view-html [content]="post.text"></quill-view-html>
+    </div>
   </div>
 </div>
+
+<ng-template #loading>
+  <p class="text-center">Loading post content...</p>
+</ng-template>
