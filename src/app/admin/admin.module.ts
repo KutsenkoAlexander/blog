@@ -11,6 +11,8 @@ import {EditPageComponent} from './edit-page/edit-page.component';
 import {SharedModule} from '../shared/shared.module';
 import {AuthGuard} from './shared/services/auth.guard';
 import {SearchPostPipe} from './shared/searchPost.pipe';
+import {AlertComponent} from './shared/components/alert/alert.component';
+import {AlertService} from './shared/services/alert.service';
 
 @NgModule({
   imports: [
@@ -31,14 +33,15 @@ import {SearchPostPipe} from './shared/searchPost.pipe';
     ])
   ],
   exports: [RouterModule],
-  providers: [AuthGuard],
+  providers: [AuthGuard, AlertService],
   declarations: [
     AdminLayoutComponent,
     LoginPageComponent,
     DashboardPageComponent,
     CreatePageComponent,
     EditPageComponent,
-    SearchPostPipe
+    SearchPostPipe,
+    AlertComponent
   ]
 })
 export class AdminModule {}

@@ -164,6 +164,7 @@ img {
 .alert-primary {
   background: var(--primary-color);
   color: #fff;
+  border-radius: .25rem;
 }
 
 .btn-light,
@@ -178,7 +179,7 @@ img {
 .btn-main,
 .bg-main,
 .badge-main,
-.alert-main {
+.alert-info {
   background: var(--main-color);
   color: #fff;
 }
